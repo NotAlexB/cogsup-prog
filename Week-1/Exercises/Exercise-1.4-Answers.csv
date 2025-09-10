@@ -1,0 +1,21 @@
+section,code,answer1,answer2,answer3,correct
+Lists,"animals = ['dog', 'cat', 'panda']
+if panda in animals:
+    print(""found it!"")",error,,,1
+Lists,"animals = ['dog', 'cat', 'panda']
+if ""panda"" or ""giraffe"" in animals:
+    print(""found it!"")",found it!,,,1
+Lists,"animals = ['dog', 'cat', 'panda']
+if ""panda"" and ""giraffe"" in animals:
+    print(""found it!"")",,,,1
+Lists,"animals = ['dog', 'cat', 'panda']
+if ['dog', 'cat'] in animals:
+    print(""we're here"")",we're here,,,1
+Lists,"some_nums = range(1,5)
+list(some_nums)","[1,2,3,4]",,,1
+Lists,"some_nums = range(1,5)
+some_nums[0]",1,,,1
+Lists,"animals = ['dog', 'cat', 'panda']
+print(animals[-1])","['panda', 'dog', 'cat']",'panda',panda,1
+Lists,"animals = ['dog', 'cat', 'panda']
+print(animals.index('cat'))",1,,,1
