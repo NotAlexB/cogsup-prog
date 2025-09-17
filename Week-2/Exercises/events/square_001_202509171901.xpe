@@ -1,0 +1,28 @@
+#Expyriment 1.0.0 (Python 3.12.10), .xpe-file, coding: cp1252
+#date: Wed Sep 17 2025 19:01:01
+#sha1: b690a9
+#modules: 
+#display: size=(800, 600), window_mode=False, opengl=2
+#os: uname_result(system='Windows', node='notAlexB', release='11', version='10.0.26100', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+12230,design,log,
+#design: #exp: Circle
+#design: block_cnt,block_id,trial_cnt,trial_id
+12230,design,logged,
+12230,Experiment,started
+12232,Stimulus,presented,0
+13232,stderr,received,'Traceback (most recent call last):'
+13232,stderr,received,'  File "C:\\Users\\alexb\\Documents\\CogSup\\Programming\\cogsup-prog\\Week-2\\Exercises\\square.py", line 26, in <module>'
+13233,stderr,received,'    circle.present(clear=True, update=True)'
+13233,stderr,received,'  File "C:\\Users\\alexb\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\expyriment\\stimuli\\_visual.py", line 1171, in present'
+13233,stderr,received,'    self.preload(inhibit_ogl_compress=True)'
+13233,stderr,received,'  File "C:\\Users\\alexb\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\expyriment\\stimuli\\_visual.py", line 1059, in preload'
+13234,stderr,received,'    self._get_surface(),'
+13234,stderr,received,'    ^^^^^^^^^^^^^^^^^^^'
+13234,stderr,received,'  File "C:\\Users\\alexb\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\expyriment\\stimuli\\_visual.py", line 490, in _get_surface'
+13234,stderr,received,'    tmp = self._create_surface()'
+13234,stderr,received,'          ^^^^^^^^^^^^^^^^^^^^^^'
+13234,stderr,received,'  File "C:\\Users\\alexb\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\expyriment\\stimuli\\_rectangle.py", line 237, in _create_surface'
+13235,stderr,received,'    surface = pygame.surface.Surface('
+13235,stderr,received,'              ^^^^^^^^^^^^^^^^^^^^^^^'
+13235,stderr,received,'ValueError: size needs to be (number width, number height)'

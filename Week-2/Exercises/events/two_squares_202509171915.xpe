@@ -1,0 +1,12 @@
+#Expyriment 1.0.0 (Python 3.12.10), .xpe-file, coding: cp1252
+#date: Wed Sep 17 2025 19:15:51
+#sha1: 5005c0
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='notAlexB', release='11', version='10.0.26100', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+140,stderr,received,'Traceback (most recent call last):'
+141,stderr,received,'  File "c:\\Users\\alexb\\Documents\\CogSup\\Programming\\cogsup-prog\\Week-2\\Exercises\\two_squares.py", line 18, in <module>'
+141,stderr,received,'    fixation = stimuli.Rectangle((50,50), colour = "green"(400,0))'
+141,stderr,received,'                                                   ^^^^^^^^^^^^^^'
+141,stderr,received,"TypeError: 'str' object is not callable"
