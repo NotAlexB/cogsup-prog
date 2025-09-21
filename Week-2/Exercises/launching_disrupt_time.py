@@ -41,6 +41,12 @@ for i in range(175):
     harry.present(clear = True, update=False)
     josh.present(clear = False, update = True)
 
+# delayed reaction time
+
+exp.clock.wait(50)
+
+# around 50 ms there is not perception of stopped motion
+
 # Josh is hit, poor josh
 for i in range(175):
     josh.move((2,0))

@@ -1,8 +1,6 @@
 # Import the main modules of expyriment
 from expyriment import design, control, stimuli
 
-control.set_develop_mode()
-
 # Create an object of class Experiment: This stores the global settings of your experiment & handles the data file, screen, and input devices
 exp = design.Experiment(name = "Circle")
 
@@ -12,7 +10,7 @@ control.initialize(exp)
 # Create a fixation cross (color, size, and position will take on default values)
 fixation = stimuli.FixCross() # At this stage the fixation cross is not yet rendered
 
-# Create a 50px-radius circle
+
 circle = stimuli.Rectangle((50,50), colour = "blue")
 
 # Start running the experiment

@@ -11,7 +11,9 @@ control.initialize(exp)
 #fixation = stimuli.FixCross() # At this stage the fixation cross is not yet rendered
 
 # hary is on the left
-harry = stimuli.Rectangle((50,50), colour = "red", position = (-400,0))
+harry = stimuli.Rectangle((50,50), colour = "red", position = (-450,0))
+
+# roughly 50 pixels makes it still look like harry is causing josh to move
 
 # josh is on the right
 josh = stimuli.Rectangle((50,50), colour = "green", position=(0,0))
@@ -40,6 +42,12 @@ for i in range(175):
     harry.move((2,0))
     harry.present(clear = True, update=False)
     josh.present(clear = False, update = True)
+
+# delayed reaction time
+
+#exp.clock.wait(50)
+
+# around 50 ms there is not perception of stopped motion
 
 # Josh is hit, poor josh
 for i in range(175):
