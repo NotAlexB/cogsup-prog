@@ -147,7 +147,7 @@ rows = 5
 
 for i in range(rows):
   for j in range(rows * 2):
-    if j > rows - i - 1 and j < rows + i + 1:
+    if j > rows - i - 2 and j < rows + i:
       print("o",end="")
     else:
       print(" ",end="")

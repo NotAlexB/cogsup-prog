@@ -18,7 +18,7 @@ dct = {'a': 3, 'b': 7, 'c': -2, 'd': 10, 'e': 5}
 
 print("Exercise 4.1")
 
-pass
+print(sum(dct.values()))
 
 print("---")
 
@@ -32,7 +32,18 @@ Print the key that has the largest value in dct.
 
 print("Exercise 4.2")
 
-pass
+largestKey = None
+largestValue = None
+
+for d in dct:
+  if largestKey == None:
+    largestKey = d
+    largestValue = dct[d]
+  if largestValue < dct[d]:
+    largestKey = d
+    largestValue = dct[d]
+
+print(largestKey)
 
 print("---")
 
@@ -46,7 +57,12 @@ Create a new dictionary with the squares of all the values in dct.
 
 print("Exercise 4.3")
 
-pass
+newDct = {}
+
+for d in dct:
+  newDct[d] = dct[d] ** 2
+  
+print(newDct)
 
 print("---")
 
@@ -60,7 +76,9 @@ Print only the keys in dct whose values are even numbers.
 
 print("Exercise 4.4")
 
-pass
+for d in dct:
+  if dct[d] % 2 == 0:
+    print(d)
 
 print("---")
 
@@ -74,7 +92,10 @@ Create a new dictionary that swaps the keys and values in dct.
 
 print("Exercise 4.5")
 
-pass
+newDct2 = {v:k for k, v in dct.items()}
+
+print(newDct2)
+
 
 print("---")
 
@@ -91,7 +112,13 @@ s = 'ccctcctttttcc'
 
 print("Exercise 4.6")
 
-pass
+newDct3 = {}
+
+for l in s:
+  newDct3.setdefault(l,0)
+  newDct3[l] = newDct3[l] + 1
+
+print(newDct3)
 
 print("---")
 
@@ -110,7 +137,11 @@ responses = 'jjjpjjpppppjj'
 
 print("Exercise 4.7")
 
-pass
+lst = []
+
+for l in responses:
+  lst.append(responses_mapping[l])
+print(lst)
 
 print("---")
 
@@ -125,7 +156,11 @@ Merge the following two dictionaries into one:
 
 print("Exercise 4.8")
 
-pass
+d1 = {'a': 1, 'b': 2}
+d2 = {'c': 3, 'd': 4}
+d3 = d1 | d2
+
+print(d3)
 
 print("---")
 
@@ -140,7 +175,11 @@ create a new one whose keys are sorted alphabetically.
 
 print("Exercise 4.9")
 
-pass
+unsorted1 = {'zebra': 10, 'dolphin': 25, 'alligator': 3, 'monkey': 5, 'pig': 9}
+
+sorted1 = dict(sorted(unsorted1.items()))
+
+print(sorted1)
 
 print("---")
 
@@ -155,6 +194,9 @@ create a new one whose values appear in increasing order.
 
 print("Exercise 4.10")
 
-pass
+unsorted2 = {'zebra': 10, 'dolphin': 25, 'alligator': 3, 'monkey': 5, 'pig': 9}
+sorted2 = dict(sorted(unsorted2.items(), key=lambda item: item[1]))
+
+print(sorted2)
 
 print("---")
