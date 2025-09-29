@@ -14,7 +14,7 @@ control.initialize(exp)
 width = exp.screen.size[0]
 length = exp.screen.size[1]
 
-square1 = stimuli.Rectangle((width // 20, width // 20), line_width= 1, position = (width//2 - width // 40, length //2-1 - width // 40), colour='red')
+square1 = stimuli.Rectangle((width // 20, width // 20), line_width= 1, position = (width//2 - width // 40, length //2 - width // 40), colour='red')
 square2 = stimuli.Rectangle((width // 20, width // 20), line_width= 1, position = (((width//2) * -1) + width // 40, length //2 - width // 40), colour='red')
 square3 = stimuli.Rectangle((width // 20, width // 20), line_width= 1, position = (width//2 - width // 40, ((length //2) * -1) + width // 40), colour='red')
 square4 = stimuli.Rectangle((width // 20, width // 20), line_width= 1, position = (((width//2) * -1) + width // 40, ((length //2) * -1) + width // 40), colour='red')
