@@ -8,14 +8,20 @@ def load(stims):
     preload(stims)
 
 def draw(stims):
-    for stim in stims:
-        stim.plot()
+    for i, stim in enumerate(stims):
+        stim.present(clear = (i == 0), update = (i == (len(stims) - 1)))
+    
 def timed_draw(stims):
-    pass
+    t0 = exp.clock.time
+    draw(stims)
+    t1 = exp.clock.time
+    
+    return t1 - t0
     # return the time it took to draw
 
 def present_for(stims, t=1000):
-    pass
+    time = timed_draw(stims)
+    exp.clock.wait(t - time)
 
 
 """ Test functions """
