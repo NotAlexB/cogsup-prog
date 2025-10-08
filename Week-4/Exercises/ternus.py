@@ -2,24 +2,9 @@ from expyriment import design, control, stimuli
 import random
 from expyriment.misc.constants import K_SPACE
 
+from drawing_functions import *
+
 colors = [(255,0,0), (0,255,0), (0,0,255)]
-
-def load(stims):
-    for stim in stims:
-        stim.preload()
-    
-def timed_draw(stims):
-    t0 = exp.clock.time
-    for i, stim in enumerate(stims):
-        stim.present(clear = (i == 0), update = (i == (len(stims) - 1)))
-    t1 = exp.clock.time
-    
-    return t1 - t0
-    # return the time it took to draw
-
-def present_for(stims, t=200):
-    time = timed_draw(stims)
-    exp.clock.wait(t - time)
     
 def make_circles(radius, tags = False):
     width = exp.screen.size[0]
@@ -40,12 +25,12 @@ def run_trial(radius, ISI, tags):
             break
         load(circles)
         t0 = exp.clock.time
-        present_for(circles[2:])
+        present_for(circles[2:], exp)
         t1 = exp.clock.time
         exp.clock.wait(ISI - (t1-t0))
         load(circles)
         t2 = exp.clock.time
-        present_for(circles[:4])
+        present_for(circles[:4], exp)
         t3 = exp.clock.time
         exp.clock.wait(ISI - (t3-t2))
     
