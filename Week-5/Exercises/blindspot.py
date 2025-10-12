@@ -4,6 +4,7 @@ import math
 
 """ Global settings """
 exp = design.Experiment(name="Blindspot", background_colour=C_WHITE, foreground_colour=C_BLACK)
+exp.add_data_variable_names(["subject_id", "eye", "keypress", "radius", "x_coord", "y_coord"])
 control.set_develop_mode()
 control.initialize(exp)
 
@@ -19,15 +20,15 @@ def make_circle(r, pos=(0,0)):
 """ Experiment """
 def run_trial(side = "L"):
     assert(side == "L" or side == "R")
-    
-    stimuli.TextScreen("Trial Instructions", "Cover your {side} eye").present()
-    exp.keyboard.wait()
-    
-    
-    sideInt = -1
+    eyes = [None, "Left", "Right"]
+    sideInt = 1
     
     if side == "R":
-        sideInt = 1
+        sideInt = -1
+    
+    stimuli.TextScreen("Trial Instructions", "Cover your " + eyes[sideInt] + " eye.\n\nFocus your other eye on the cross.\n\nUse the arrow keys to adjust the position of the circle and the one and two keys to adjust size.\n\nAdjust the position and size of the circle until you find the position you cannot see it. Then hit space to end the experinment.").present()
+    exp.keyboard.wait()
+    
         
         
     fixation = stimuli.FixCross(size=(150, 150), line_width=10, position=[300 * sideInt, 0])
@@ -47,16 +48,22 @@ def run_trial(side = "L"):
         key, _ = exp.keyboard.wait(keys = [K_DOWN, K_UP, K_LEFT, K_RIGHT, K_1, K_2, K_SPACE])
         
         if key == K_DOWN:
+            exp.data.add([eyes[sideInt],"down",radius,posX,posY])
             posY -= 5
         elif key == K_UP:
+            exp.data.add([eyes[sideInt],"up",radius,posX,posY])
             posY += 5
         elif key == K_LEFT: 
+            exp.data.add([eyes[sideInt],"left",radius,posX,posY])
             posX -= 5 
         elif key == K_RIGHT: 
+            exp.data.add([eyes[sideInt],"right",radius,posX,posY])
             posX += 5
-        elif key == K_1: 
+        elif key == K_1:
+            exp.data.add([eyes[sideInt],"one",radius,posX,posY])
             size -= 15
-        elif key == K_2: 
+        elif key == K_2:
+            exp.data.add([eyes[sideInt],"two",radius,posX,posY])
             size += 15
         elif key == K_SPACE: 
             break
